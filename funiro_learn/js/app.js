@@ -290,9 +290,70 @@ if(document.querySelector('.slider-main__body')) {
 	});
 }
 
+if (document.querySelector('.slider-rooms__body')) {
+	new Swiper('.slider-rooms__body', {
+		observer: true,
+		observerParents: true,
+		slidesPerView:'auto',
+		spaceBetween: 24,
+		speed: 800,
+		loop: true,
+		watchOverflow: true,
+		loopAdditionalSlides: 5,
+		preloadImages: false,
+		parallax: true,
+		//dotts
+		pagination: {
+			el: '.slider-rooms__dotts',
+			clickable: true,
+		},
+		//arrows
+		navigation: {
+			nextEl: '.slider-rooms .slider-arrow_next',
+			prevEl: '.slider-rooms .slider-arrow_prev',
+		}
+	});
+}
 
-
-
+if (document.querySelector('.slider-tips__body')) {
+	new Swiper('.slider-tips__body', {
+		observer: true,
+		observerParents: true,
+		slidesPerView:'3',
+		spaceBetween: 32,
+		speed: 800,
+		loop: true,
+		watchOverflow: true,
+		// loopAdditionalSlides: 5,
+		// preloadImages: false,
+		// parallax: true,
+		//dotts
+		pagination: {
+			el: '.slider-tips__dotts',
+			clickable: true,
+		},
+		//arrows
+		navigation: {
+			nextEl: '.slider-tips .slider-arrow_next',
+			prevEl: '.slider-tips .slider-arrow_prev',
+		},
+		breakpoints: {
+			320: {
+				slidesPerView: 1.1,
+				spaceBetween: 15,
+				autoHeight: true,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 32,
+			}
+		}
+	});
+}
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
